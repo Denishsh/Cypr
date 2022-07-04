@@ -1,0 +1,10 @@
+{
+    "good": {
+        "login": "qamid@qamid.ru",
+        "pass": "qamid"
+    },
+    "bad": {
+        "login": "qamid@qamid.com",
+        "pass": "12345"
+    }   
+}
