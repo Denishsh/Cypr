@@ -4,8 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:spec1": "cypress run --spec 'cypress/e2e/test1.cy.js' --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "cy:spec2": "cypress run --spec 'cypress/e2e/test2.cy.js' --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "cy:spec3": "cypress run --spec 'cypress/e2e/test3.cy.js' --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "cy:parallel": "npm run cy:spec1 --browser chrome --group Spec1 --ci-build-id 1 & npm run cy:spec2 --browser chrome --group Spec2--ci-build-id 1 & npm run cy:spec3 --browser chrome --group Spec3--ci-build-id 1",
+    "сy:run:chrome": "cypress run --browser chrome --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "сy:run:electron": "cypress run --browser electron --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "сy:run:firefox": "cypress run --browser firefox --record --key 5de5160c-0aec-435e-ba5c-1007d6fb6268",
+    "cy:parallel:chrome_firefox": "npm run cy:spec1 --browser chrome --group Spec1 --ci-build-id 1 & npm run cy:spec2 --browser firefox --group Spec2--ci-build-id 1 & npm run cy:spec3 --browser chrome --group Spec3--ci-build-id 1",
+    "cy:parallel:electron_chrome": "npm run cy:spec1 --browser chrome --group Spec1 --ci-build-id 1 & npm run cy:spec2 --browser electron --group Spec2--ci-build-id 1 & npm run cy:spec3 --browser chrome --group Spec3--ci-build-id 1"
+
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.3.0"
+  }
 }
